@@ -1,7 +1,6 @@
 package colls;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,5 +21,11 @@ public class Main {
 
         // #3
         list.forEach((key, value) -> System.out.println(key + ": " + value));
+
+        // #4 with filter
+        list.entrySet()
+                .stream()
+                .filter(temp -> temp.getValue()>3)
+                .forEach(temp -> System.out.println(temp.getKey() + ": " + temp.getValue()));
     }
 }
